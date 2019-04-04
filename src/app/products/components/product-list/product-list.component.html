@@ -1,5 +1,4 @@
 <h2>Product List</h2>
-<ul>
-  <li *ngFor="let p of products">{{ p.name }}</li>
-</ul>
-<button mat-raised-button>Basic</button>
+<div class="product-container">
+    <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
+</div>
