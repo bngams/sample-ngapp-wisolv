@@ -4,11 +4,15 @@ import { ProductDashboardComponent } from './components/product-dashboard/produc
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductsRoutingModule } from './products-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ProductDashboardComponent, ProductListComponent, ProductFormComponent, ProductCardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ProductsRoutingModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }
