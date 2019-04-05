@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { GettingStartedComponent } from './components/getting-started/getting-started.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { VisitorGuard } from './security/guards/visitor.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'start', component: GettingStartedComponent },
+  { path: 'start', component: GettingStartedComponent, canActivate: [VisitorGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'products', loadChildren: './products/products.module#ProductsModule' },
   { path: '**', component: PageNotFoundComponent }

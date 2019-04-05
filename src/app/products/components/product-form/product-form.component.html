@@ -1,3 +1,14 @@
-<p>
-  product-form works!
-</p>
+<h2>Product form</h2>
+<form [formGroup]="productForm" (ngSubmit)="save()">
+  <div class="errors">
+    <p *ngIf="productForm.controls['name'].valid == false 
+      && productForm.controls['name'].touched">Name required</p>
+  </div>
+  <mat-form-field class="">
+    <input matInput placeholder="Name..." formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="">
+    <input matInput placeholder="Price..." formControlName="price">
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Save</button>
+</form>
