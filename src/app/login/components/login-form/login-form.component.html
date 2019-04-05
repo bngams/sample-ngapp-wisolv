@@ -1,0 +1,13 @@
+<form #loginForm="ngForm">
+  <div class="errors" *ngIf="loginForm.invalid">
+    <p *ngIf="email?.errors?.required">Email required</p>
+  </div>
+  <mat-form-field class="">
+    <input matInput placeholder="Email..." type="email" name="email" #email="ngModel" [(ngModel)]="credentials.email"
+      required minlength="5">
+  </mat-form-field>
+  <mat-form-field class="">
+    <input matInput type="password" name="pwd" [(ngModel)]="credentials.pwd" required>
+  </mat-form-field>
+  <button [disabled]="loginForm.invalid" type="button" mat-raised-button color="primary" (click)="submit()">Login</button>
+</form>
