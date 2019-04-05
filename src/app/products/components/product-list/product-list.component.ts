@@ -30,7 +30,7 @@ export class ProductListComponent implements OnInit {
   }
 
   loadProducts() {
-    this.products$ = this.productService.getProducts();
+    this.products$ = this.productService.list();
   }
 
   loadProductsFromMock() {
